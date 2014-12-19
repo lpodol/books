@@ -32,6 +32,13 @@ p {
   font-size: 10px;
   margin-left: 450;
 }
+
+#home{
+  display: black;
+  text-align: center;
+  font-size: 10px;
+}
+
 #next{
   display: block;
   float:right;

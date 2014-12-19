@@ -21,13 +21,13 @@ if (urlArr[2] === "style.css"){
     fs.readFile( library[urlArr[1]] , function(err,data2){
       var paginatedFile = paginate(data2.toString() , urlArr[2]);
       var result = data1.toString().replace("REPLACE", paginatedFile);
-      result = result.replace("pBack", "http://localhost:2000/" + urlArr[1] + "/" + (parseInt(urlArr[2]) - 1)+" ");
+      result = result.replace("pBack", "http://adam.princesspeach.nyc/" + urlArr[1] + "/" + (parseInt(urlArr[2]) - 1)+" ");
 
       var book = data2.toString();
       var lines = book.split("\n");
       var totalPages = Math.floor(lines.length / 22) + 1;
       if (urlArr[2] < totalPages) {
-        result = result.toString().replace("pNext", "http://localhost:2000/" + urlArr[1] + "/" + (parseInt(urlArr[2]) + 1));
+        result = result.toString().replace("pNext", "http://adam.princesspeach.nyc/" + urlArr[1] + "/" + (parseInt(urlArr[2]) + 1));
       } else {
         result = result.toString().replace("pNext","");
       }

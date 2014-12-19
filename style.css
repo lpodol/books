@@ -44,6 +44,12 @@ p {
   text-align: center;
   font-size: 10px;
 }
+
+#title {
+	text-align: center;
+	font-size: 10px;
+}
+
 a:visited {
   color: black;
 }

@@ -24,9 +24,10 @@ var openBook;
 var server = http.createServer(function(req,res){
   var requrl = req.url;
   var urlArr = requrl.split("/");
-  console.log(urlArr);
-  inputPath = urlArr[2];
-  if (inputPath === "style.css"){
+  console.log("urlArr: " + urlArr);
+  inputPath1 = urlArr[1];
+  inputPath2 = urlArr[2];
+  if (inputPath2 === "style.css"){
     fs.readFile("style.css", function(err,data){
       var style = data.toString();
       res.end(style);
@@ -35,28 +36,30 @@ var server = http.createServer(function(req,res){
     fs.readFile("index.html" , function(err,data1){
 
       library.forEach(function(bookdata) {
-       if (inputPath === bookdata.title) {
+       if (inputPath1 === bookdata.path) {
          openBook = bookdata;
+         console.log("openBook: ",openBook)
        }
       });
 
       fs.readFile(openBook.filename , function(err,data2){
-        var paginatedFile = paginate(data2.toString() , inputPath);
+        var paginatedFile = paginate(data2.toString() , inputPath2);
         var result = data1.toString().replace("REPLACE", paginatedFile);
-        if (inputPath > 1){
-          result = result.toString().replace("pBack", "http://localhost:2000/stuff/" + (parseInt(inputPath) - 1));
+        if (inputPath2 > 1){
+          result = result.toString().replace("pBack", "http://localhost:2000/" + inputPath1 + "/" + (parseInt(inputPath2) - 1).toString());
         } else {
           result = result.toString().replace("pBack", "");
         }
         var book = data2.toString();
         var lines = book.split("\n");
         var totalPages = Math.floor(lines.length / 22) + 1;
-        if (inputPath < totalPages) {
-          result = result.toString().replace("pNext", "http://localhost:2000/stuff/" + (parseInt(inputPath) + 1));
+        if (inputPath2 < totalPages) {
+          result = result.toString().replace("pNext", "http://localhost:2000/" + inputPath1 + "/" + (parseInt(inputPath2) + 1));
         } else {
           result = result.toString().replace("pNext","");
         }
-        result = result.toString().replace("ii", inputPath);
+        result = result.toString().replace("ii", inputPath2);
+        result = result.toString().replace("TITLE", openBook.title + " by " + openBook.author);
         res.end(result);
       });
     });

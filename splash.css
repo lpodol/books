@@ -35,33 +35,35 @@ body{
   font: 68px/60px 'Ultra', sans-serif;
   text-align: center;
   text-transform: uppercase;
-  /*font-size: 100px;*/
-  margin-top: -120px;
+  margin-top: -100px;
 }
 #and{
   font-family: 'Playfair Display SC', serif;
-  font-size: 70px;
+  font-size: 50px;
 }
 #jungle{
   position: relative;
   font:  900 150px/90px 'Playfair Display', Georgia, serif;
   margin-left: 100px;
-  margin-top: -70px
+  line-height: 10px;
+  margin-top: 30px;
 }
 #andersen{
   position: relative;
   font: 68px/60px 'Playfair Display SC', sans-serif;
   text-align: center;
   text-transform: uppercase;
-  margin-top: -105px;
+  margin-top: -70px;
   margin-left: -140px;
 }
 #aesop{
+  position: relative;
   font: italic 900 130px/90px 'Playfair Display', Georgia, serif;
   text-transform: uppercase;
   text-align: center;
-  margin-top: -75px;
+  margin-top: -12px;
   margin-left: 100px;
+  line-height: 10px;
 }
 a:link{
   text-decoration: none;

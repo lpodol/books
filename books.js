@@ -1,6 +1,6 @@
 //books.js
 
-var library = {Alice_in_Wonderland:"alice.txt" , Peter_Pan:"peter.txt" , Aesops_Fables:"aesop.txt" ,
+var library = {Alice_in_Wonderland:"aliceInWonderland.txt" , Peter_Pan:"peter.txt" , Aesops_Fables:"aesop.txt" ,
 Jungle_Book:"jungle.txt" , Andersens_Fairy_Tales:"andersen.txt"};
 var http = require("http");
 var fs = require("fs");
@@ -8,7 +8,7 @@ var server = http.createServer(function(req,res){
 
 var requrl = req.url;
 var urlArr = requrl.split("/");
-
+console.log(urlArr);
 if (urlArr[2] === "style.css"){
   fs.readFile("style.css" , function(err,data){
     var style = data.toString();

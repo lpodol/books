@@ -1,0 +1,52 @@
+/* style.css */
+
+body{
+  margin:0 auto;
+}
+
+div{
+  display: block;
+
+}
+
+#page{
+  margin:35 auto 0 auto;
+  padding: 2px;
+  background-color: #f4ebf4;
+  width :600px;
+  height:550px;
+  font-family: 'Old Standard TT', serif;
+  /* text-align: center; */
+  border-bottom: 2px black solid;
+  border-top: 2px black solid;
+}
+
+p {
+	margin-left: 42px;
+	margin-right: 42px;
+}
+
+#back{
+  display: block;
+  float: left;
+  font-size: 10px;
+  margin-left: 450
+}
+#next{
+  display: block;
+  float:right;
+  font-size: 10px;
+  margin-right: 450;
+}
+
+#number{
+  margin-top: -10;
+  text-align: center;
+  font-size: 10px;
+}
+a:visited {
+  color: black;
+}
+a:link{
+  color: black;
+}

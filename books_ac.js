@@ -27,7 +27,17 @@ var server = http.createServer(function(req,res){
   console.log("urlArr: " + urlArr);
   inputPath1 = urlArr[1];
   inputPath2 = urlArr[2];
-  if (inputPath2 === "style.css"){
+  if (inputPath1 === "splash.html") {
+    fs.readFile("splash.html", function(err,data) {
+      var splash = data.toString();
+      res.end(splash);
+    });
+  } else if (inputPath1 === "splash.css") {
+    fs.readFile("splash.css", function(err,data) {
+      var splashStyle = data.toString();
+      res.end(splashStyle);
+    });
+  } else if (inputPath2 === "style.css"){
     fs.readFile("style.css", function(err,data){
       var style = data.toString();
       res.end(style);

@@ -22,15 +22,15 @@ div{
 }
 
 p {
-	margin-left: 42px;
-	margin-right: 42px;
+	margin-left: 39px;
+	margin-right: 39px;
 }
 
 #back{
   display: block;
   float: left;
   font-size: 10px;
-  margin-left: 450
+  margin-left: 450;
 }
 #next{
   display: block;
